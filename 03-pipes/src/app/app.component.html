@@ -1,0 +1,121 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <br>
+
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Variable</th>
+          <th scope="col">Pipe</th>
+          <th scope="col">Producto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {{ nombre }}</td>
+          <td> uppercase </td>
+          <td> {{ nombre | uppercase }}</td>
+        </tr>
+        <tr>
+            <td> {{ nombre }}</td>
+            <td> lowercase </td>
+            <td> {{ nombre | lowercase }}</td>
+        </tr>
+        <tr>
+            <td> {{ nombre }}</td>
+            <td> slice:3 </td>
+            <td> {{ nombre | slice:3 }}</td>
+        </tr>
+        <tr>
+            <td> {{ nombre }}</td>
+            <td> slice:0:3 </td>
+            <td> {{ nombre | slice:0:3 }}</td>
+        </tr>
+        <tr>
+            <td> {{ arreglo }}</td>
+            <td> slice:0:4 </td>
+            <td> {{ arreglo | slice:0:4 }}</td>
+        </tr>
+        <tr>
+            <td> {{ PI }}</td>
+            <td> (number/decimal):'3.1-4' </td>
+            <td> {{ PI | number:'3.1-4' }}</td>
+        </tr>
+        <tr>
+            <td> {{ salario }}</td>
+            <td> (number/decimal):'.1-4' </td>
+            <td> {{ salario | number:'.2-4' }}</td>
+        </tr>
+        <tr>
+            <td> {{ a }}</td>
+            <td> percent </td>
+            <td> {{ a | percent }}</td>
+        </tr>
+        <tr>
+            <td> {{ a }}</td>
+            <td> percent:'2.2-4' </td>
+            <td> {{ a | percent:'2.2-4' }}</td>
+        </tr>
+        <tr>
+            <td> {{ salario }}</td>
+            <td> currency </td>
+            <td> {{ salario | currency }}</td>
+        </tr>
+        <tr>
+            <td> {{ salario }}</td>
+            <td> currency-EUROS </td>
+            <td> {{ salario | currency:'EUR' }}</td>
+        </tr>
+        <tr>
+            <td> {{ salario }}</td>
+            <td> currency-EUROS:false </td>
+            <td> {{ salario | currency:'EUR':false }}</td>
+        </tr>
+        <tr>
+          <td> {{ valorDePromesa }}</td>
+          <td> async </td>
+          <td> {{ valorDePromesa | async }}</td>
+        </tr>
+        <tr>
+          <td> {{ nombreCompleto }}</td>
+          <td> capitalizado </td>
+          <td> {{ nombreCompleto | capitalizado }}</td>
+        </tr>
+        <tr>
+          <td> {{ nombreCompleto }}</td>
+          <td> capitalizado </td>
+          <td> {{ nombreCompleto | capitalizado:false }}</td>
+        </tr>
+        <tr>
+          <td> {{ nombre }}</td>
+          <td> 
+            contrasena:{{activar}}
+            <br>
+            <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">
+              Ver/Ocultar
+            </button>
+          </td>
+          <td> {{ nombre | contrasena:activar }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <h4>Slice</h4>
+    <ul>
+      <li *ngFor="let item of arreglo | slice:5:10">{{ item }}</li>
+    </ul>
+    <br>
+    <hr>
+    <h4>JSON</h4>
+    <pre>
+      {{ heroe | json }}
+    </pre>
+    <br>
+    <hr>
+    <h4>Youtube <small>Video</small></h4>
+
+
+</div>
